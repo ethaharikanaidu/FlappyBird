@@ -5,23 +5,7 @@ using UnityEngine;
 public class PipeGenerator : MonoBehaviour
 
 {
-    /* Default functions for unity
-    private void Awake()
-    {
-        
-    }
-
-    private void OnEnable()
-    {
-        
-    }
-
-    private void OnDisable()
-    {
-            
-    }
-    */
-  
+    public LogicScript Logic;
     public GameObject pipeprefab;
     public float spawnRate = 2;
     private float timer = 0;
@@ -36,6 +20,8 @@ public class PipeGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!Logic._isGameStart) return;
+
         if (timer < spawnRate)
         {
             timer = timer + Time.deltaTime;
