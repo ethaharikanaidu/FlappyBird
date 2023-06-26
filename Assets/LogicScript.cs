@@ -25,10 +25,16 @@ public class LogicScript : MonoBehaviour
     }
     private void Update()
     {
+        /* We are using Escape Key to go to option menu rather than pressing
+        button to save user time, i.e make it user friendly system */
+
         if (Input.GetKeyDown(KeyCode.Escape) == true)
         {
             ActiveObj(PauseScreen,Helpscreen);
         }
+        /* H key can be used from keyboard so the user can understand how to control 
+         * the bird, how to score and how to avoid the pipes*/
+
         if (Input.GetKeyDown(KeyCode.H) == true)
         {
             PauseGamebt();
@@ -53,6 +59,8 @@ public class LogicScript : MonoBehaviour
     }
     public void startGame()
     {
+        /* it gives counter time to play the game coroutine helps to have a sync 
+         function called rather than waiting to execute, its parallel processing*/
         StartCoroutine(InGamestart());
     }
 
